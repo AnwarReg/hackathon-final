@@ -1,0 +1,52 @@
+/* Header container styling */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #342A21; /* Bistre */
+    padding: 6px 16px; /* Slim padding */
+    border-bottom-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+    color: #F1E0C5; /* Champagne for text */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+/* Header title and logo wrapper */
+.header-title-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* Logo styling */
+.header-logo {
+  width: 40px; /* Adjust size as needed */
+  height: auto;
+  margin-right: 10px; /* Space between logo and title */
+}
+
+/* Header top section */
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Header title styling */
+.header-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #F1E0C5; /* Champagne */
+}
+
+/* Description text styling */
+.header-description {
+    color: #C9B79C; /* Khaki */
+    font-size: 0.875rem;
+    margin-top: 2px;
+}
