@@ -13,7 +13,12 @@ const Header = () => {
           <img src={logo} alt="YNote Logo" className="header-logo" />
           <img src={secondaryImage} alt="Secondary Image" className="header-secondary-image" /> 
         </Link>
+        <Link to="/logout">
+        <button className="logout-button">Logout</button>
+        </Link>
+         
       </div>
+      
     </header>
   );
 };

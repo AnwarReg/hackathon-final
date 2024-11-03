@@ -6,6 +6,8 @@ import MainNote from "./MainNote"; // updated casing
 import Upload from "./Upload";
 import "./index.css"
 import Footer from "./footer"
+import LandingPage from './landing';
+import Login from "./Login";
 
 function App() {
   return (
@@ -13,8 +15,11 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/note/:id" element={<MainNote />} /> // updated casing
           <Route path="/upload" element={<Upload />} />
+          <Route path="/landing" element={<LandingPage />} />
+
         </Routes>
         <Footer />
       </div>
