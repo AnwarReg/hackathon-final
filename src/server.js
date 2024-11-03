@@ -1,9 +1,13 @@
 // Import the required modules
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 // Create an instance of an Express app
 const app = express();
+
+// Enable CORS so Vite (on a different port) can access this server
+app.use(cors());
 
 // Middleware to parse JSON requests
 app.use(express.json());
@@ -36,9 +40,6 @@ const fileSchema = new mongoose.Schema({
   
   const File = mongoose.model('File', fileSchema);
 
-  app.get('/',(req,res) =>{
-    res.render()
-  })
 
   app.post('/upload', async (req, res) => {
     try {
@@ -50,7 +51,7 @@ const fileSchema = new mongoose.Schema({
   
       // Save the file to the database
       const savedFile = await newFile.save();
-  
+      res.send("collection created");
       // Send a success response with the saved file data
       res.status(201).json({ message: 'File uploaded successfully', file: savedFile });
     } catch (error) {
@@ -61,4 +62,8 @@ const fileSchema = new mongoose.Schema({
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client', 'index.html'));
 });

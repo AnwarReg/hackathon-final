@@ -6,7 +6,6 @@ import Upload from "./Upload";
 import "./index.css"
 
 function App() {
-  console.log("nigga");
   return (
      <Router>
       <div className="App">
