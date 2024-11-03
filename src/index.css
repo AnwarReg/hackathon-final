@@ -11,8 +11,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.body {
+body {
   background-color: #ffffff;
+  margin: 0;
 }
 
 a {
@@ -41,7 +42,7 @@ a:hover {
   flex-direction: column;
   align-items: stretch;
   width: 100%;
-  margin-top: 52px; /* Adjust this to the height of the fixed Header */
+  margin-top: 60px; /* Adjust this to the height of the fixed Header */
 }
 
 h1 {
