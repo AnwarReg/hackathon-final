@@ -1,74 +1,77 @@
 /* Main container styling */
 .upload-page {
-    padding-top: 80px; /* Adjust to prevent overlap with the fixed header */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f7f5f2;
-    min-height: 100vh;
-    box-sizing: border-box;
-  }
+  padding-top: 80px; /* Adjust to prevent overlap with the fixed header */
+  display: flex;
+  width: 100%;
   
-  /* Form container */
-  .upload-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  /* Form title */
-  .upload-title {
-    font-size: 1.5rem;
-    color: #342A21; /* Bistre */
-    text-align: center;
-  }
-  
-  /* Label styling */
-  .label {
-    font-weight: bold;
-    color: #342A21; /* Bistre */
-  }
-  
-  /* Input box styling */
-  .input-box {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    color: #333;
-  }
-  
-  /* Small input box for course name */
-  .input-box.small {
-    width: 100%;
-  }
-  
-  /* Large text area for notes */
-  .input-box.large {
-    width: 100%;
-    height: 150px;
-    resize: vertical;
-  }
-  
-  /* Upload button styling */
-  .upload-button {
-    padding: 10px;
-    background-color: #DA667B; /* Blush */
-    color: #fff;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .upload-button:hover {
-    background-color: #C75061; /* Darker Blush */
-  }
+  flex-direction: column;
+  align-items: center;
+  background-color: #f7f5f2;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Form container */
+.upload-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Form title */
+.upload-title {
+  font-size: 1.5rem;
+  color: #342A21; /* Bistre */
+  text-align: center;
+}
+
+/* Label styling */
+.label {
+  font-weight: bold;
+  color: #342A21; /* Bistre */
+}
+
+/* Input box styling */
+.input-box {
+  padding: 10 10px 10px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Small input box for course name */
+.input-box.small {
+  width: 100%;
+  height: 30px;
+}
+
+/* Large text area for notes */
+.input-box.large {
+  width: 100%;
+  height: 250px;
+  resize: vertical;
+}
+
+/* Upload button styling */
+.upload-button {
+  padding: 10px;
+  background-color: #DA667B; /* Blush */
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+  background-color: #C75061; /* Darker Blush */
+}

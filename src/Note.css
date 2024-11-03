@@ -1,0 +1,41 @@
+/* Main card styling */
+.note-card {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 300px;
+    width: 100%; /* Take full width of grid cell */
+    box-sizing: border-box;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+  /* Header section with folder icon and label */
+  .note-header {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #555; /* Slightly darker gray for label */
+    margin-bottom: 10px;
+  }
+  
+  .folder-icon {
+    color: #34a853; /* Green color for folder icon */
+    font-size: 1.2rem;
+    margin-right: 5px;
+  }
+  
+  /* Label beside the folder icon */
+  .note-label {
+    color: #555; /* Gray color for 'Course' label */
+  }
+  
+  /* Title for course name */
+  .note-title {
+    font-size: 1.4rem;
+    color: #1a73e8; /* Bright blue color for title */
+    margin: 10px 0;
+    line-height: 1.2;
+    font-weight: 500;
+  }

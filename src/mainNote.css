@@ -1,0 +1,120 @@
+/* Main container styling */
+.note-page {
+    padding-top: 80px; /* Prevents overlap with fixed header */
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f7f5f2, #e2e0da); /* Soft gradient background */
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  /* Note content container */
+  .note-content {
+    background-color: #ffffff;
+    max-width: 800px;
+    width: 90%;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    box-sizing: border-box;
+    text-align: left;
+  }
+  
+  /* Uploaded by section */
+  .note-user {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+  
+  /* Note text container */
+  .note-text {
+    line-height: 1.75;
+    color: #333;
+  }
+  
+  /* Note text title styling */
+  .note-text h2 {
+    font-size: 1.8rem;
+    color: #3b2d2a; /* Darker bistre for a classic look */
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e2e0da; /* Subtle divider */
+    padding-bottom: 10px;
+    text-align: center;
+  }
+  
+  /* Paragraph styling for note content */
+  .note-text p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    text-indent: 20px; /* Indentation for a refined look */
+    white-space: pre-wrap; /* Preserves line breaks and spaces */
+  }
+  
+  /* Styling for list items in the note */
+  .note-text p:not(:last-child) {
+    margin-bottom: 15px; /* Adds space between sections */
+  }
+  
+  /* Highlighted terms styling (e.g., part of speech types) */
+  .note-text p strong {
+    color: #DA667B; /* Blush for highlighted text */
+    font-weight: bold;
+  }
+  
+  /* Increase contrast and emphasis for key terms */
+  .note-text ul,
+  .note-text ol {
+    padding-left: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .note-text li {
+    margin-bottom: 8px;
+    color: #3b2d2a;
+  }
+  
+  /* Feedback section container */
+  .note-feedback {
+    display: flex;
+    justify-content: center; /* Center align the buttons */
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+    margin-bottom: 40px; /* Add space at the bottom to keep it away from the footer */
+  }
+  
+  /* Base styling for upvote/downvote buttons */
+  .feedback-button {
+    padding: 10px 20px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Highlight styles for upvoted and downvoted states */
+  .feedback-button.upvoted {
+    background-color: #34a853; /* Green for upvote */
+    color: #fff;
+    border-color: #34a853;
+  }
+  
+  .feedback-button.downvoted {
+    background-color: #e53935; /* Red for downvote */
+    color: #fff;
+    border-color: #e53935;
+  }
+  
+  /* Hover effect */
+  .feedback-button:hover {
+    background-color: #e0e0e0;
+  }

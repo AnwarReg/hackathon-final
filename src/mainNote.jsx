@@ -1,47 +1,87 @@
-import React, { useEffect, useState } from 'react';
+// MainNote.js
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import axiosClient from './axiosClient';
+import { supabase } from './supabaseClient';
+import './mainNote.css';
 import Header from './Header';
-import Note from './Note'; // Import the Note component
-import { Link } from 'react-router-dom';
 
-function MainNote({ filterName }) { // Add filterName prop
-  const [notes, setNotes] = useState([]); // State to store fetched notes
+const MainNote = () => {
+  const [upvoted, setUpvoted] = useState(false);
+  const [downvoted, setDownvoted] = useState(false);
 
-  // Function to fetch notes from the server
-  const fetchNotes = async () => {
-    try {
-      const response = await fetch('http://localhost:3000/notes'); // Adjust the URL if needed
-      const data = await response.json();
-      setNotes(data); // Set the fetched notes to state
-    } catch (error) {
-      console.error('Error fetching notes:', error);
-    }
+  const handleUpvote = () => {
+    setUpvoted(true);
+    setDownvoted(false); // Reset downvote if upvote is selected
   };
 
-  // Fetch notes when the component mounts
+  const handleDownvote = () => {
+    setDownvoted(true);
+    setUpvoted(false); // Reset upvote if downvote is selected
+  };
+
+  const { id } = useParams();
+  const location = useLocation();
+  const note = location.state?.note;
+
+  if (note) {
+    return (
+      <div>
+        <h1>{note.title}</h1>
+        <p>{note.content}</p>
+      </div>
+    );
+  }
+
+  const [fetchedNote, setFetchedNote] = useState({});
+
   useEffect(() => {
-    fetchNotes();
-  }, []);
+    const fetchNote = async () => {
+      try {
+        const { data: notes, error } = await supabase
+          .from('notes')
+          .select("*")
+          .eq('id', id);
+
+        if (error) {
+          console.error('Error fetching note:', error);
+        } else {
+          setFetchedNote(notes[0]);
+        }
+      } catch (error) {
+        console.error('Error fetching note:', error);
+      }
+    };
+
+    fetchNote();
+  }, [id]);
 
   return (
-    <div>
-      <Header />
-      {/* Dropdown and other elements here */}
-
-      <div className="app-container">
-        <div className="notes-container">
-          {notes.length > 0 ? (
-            // Filter notes by the name passed as a prop
-            notes.filter(note => note.name === filterName).map((note) => (
-              <Note key={note._id} name={note.name} text={note.text} />
-            ))
-          ) : (
-            <p>No notes available.</p>
-          )}
+    <div className='note-page'>
+    <Header />
+    <div className='note-content'>
+    <div className='note-text'>
+      <h2>{fetchedNote.title}</h2>
+      <p>{fetchedNote.content}</p>
+    </div>
+    <div className="note-feedback">
+          <button
+            className={`feedback-button ${upvoted ? 'upvoted' : ''}`}
+            onClick={handleUpvote}
+          >
+            ⬆️ Upvote
+          </button>
+          <button
+            className={`feedback-button ${downvoted ? 'downvoted' : ''}`}
+            onClick={handleDownvote}
+          >
+            ⬇️ Downvote
+          </button>
         </div>
-
-      </div>
+    </div>
     </div>
   );
-}
+};
 
 export default MainNote;

@@ -1,21 +1,25 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// App.jsx
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./Home";
-import Note from "./Note";
+import MainNote from "./MainNote"; // updated casing
 import Upload from "./Upload";
 import "./index.css"
+import Footer from "./footer"
 
 function App() {
   return (
-     <Router>
+    <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/Note" element={<Note/>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/note/:id" element={<MainNote />} /> // updated casing
           <Route path="/upload" element={<Upload />} />
         </Routes>
+        <Footer />
       </div>
-    </Router> );
+    </Router>
+  );
 }
 
 export default App;

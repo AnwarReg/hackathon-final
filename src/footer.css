@@ -1,0 +1,9 @@
+.footer {
+    background-color: #333; /* Dark background color for contrast */
+    color: #f1f1f1; /* Light color for text */
+    text-align: center;
+    font-size: 0.8rem; /* Smaller font size */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
