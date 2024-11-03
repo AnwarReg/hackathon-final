@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Header from "./Header";
 import Note from "./Note";
-import landing from "./landing";
 import { Link } from 'react-router-dom'; 
 import "./style.css";
 import axiosClient from './axiosClient';
 import Footer from './footer';
+
 
 function Home() {
   const [selectedOption, setSelectedOption] = useState("");
